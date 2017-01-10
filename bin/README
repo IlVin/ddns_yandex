@@ -1,0 +1,3 @@
+Folder for building project.
+
+cd ./bin && cmake .. && make
