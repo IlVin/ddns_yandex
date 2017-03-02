@@ -40,6 +40,13 @@ include_directories (${Boost_INCLUDE_DIRS})
 
 
 
+######  CURL  ############
+find_library(CURL_LIBRARY NAMES curl)
+set (LIBRARIES ${LIBRARIES} ${CURL_LIBRARY})
+###### /CURL  ############
+
+
+
 ###### TESTS  ############
 set (TESTS_PROJECT "${PROJECT}_ut")
 enable_testing ()

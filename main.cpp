@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "src/common.h"
+#include "curl/curl.h"
 
 using namespace NYDDNS;
 using namespace std;
@@ -42,5 +43,16 @@ int main() {
     cout << "c is " << c.ToBool() << endl;
     cout << "d is " << d.ToBool() << endl;
 */
+
+    CURL *  curl_handle = curl_easy_init();
+    if(curl_handle) {
+        // задаем  url адрес
+        curl_easy_setopt(curl_handle, CURLOPT_URL, "http://www.cyberforum.ru");
+        // выполняем запрос
+        CURLcode res = curl_easy_perform(curl_handle);
+        // закрываем дескриптор curl
+        curl_easy_cleanup(curl_handle);
+    }
+
     return 0;
 }

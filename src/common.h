@@ -7,6 +7,8 @@
 #include <cstdio>
 #include <deque>
 #include <iostream>
+#include "curl/curl.h"
+
 
 namespace NYDDNS {
 
